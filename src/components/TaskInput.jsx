@@ -26,7 +26,8 @@ function TaskInput({ AddTask }) {
         className="ml-4 bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-white flex items-center"
       >
         Criar
-        
+       <span className="material-symbols-outlined ml-2">add_circle</span>
+
       </button>
     </div>
   );

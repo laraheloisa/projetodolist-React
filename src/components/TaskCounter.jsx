@@ -1,8 +1,8 @@
 import React from 'react';
 
 function TaskCounter({ tasks }) {
-  const totalTasks = tasks.length;
-  const completedTasks = tasks.filter(task => task.completed).length;
+  const totalTasks = tasks.length; // armazena o total de tarefas
+  const completedTasks = tasks.filter(task => task.completed).length; //conta quantas tarefas foram concluídas e quantas existem
 
   return (
     <div className="flex justify-between w-full max-w-4xl my-4">
