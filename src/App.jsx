@@ -1,20 +1,18 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
+import TaskInput from './components/TaskInput';
+import TaskCounter from './components/TaskCounter';
 
 
 function App() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState([]); //define o estado tasks como como array vazio 
 
   const addTask = (taskName) => {
-    setTasks([...tasks, { name: taskName, completed: false }]);
+    setTasks([...tasks, { name: taskName, completed: false }]); //setTasks([...tasks, ...]): Atualiza o estado tasks, adicionando um novo objeto. e define o estado
   };
 
-  const toggleTask = (taskName) => {
-    setTasks(tasks.map(task =>
-      task.name === taskName ? { ...task, completed: !task.completed } : task
-    ));
-  };
 
+  //Remove uma tarefa da lista
   const deleteTask = (taskName) => {
     setTasks(tasks.filter(task => task.name !== taskName));
   };
@@ -24,7 +22,7 @@ function App() {
       <Header />
       <TaskInput onAddTask={addTask} />
       <TaskCounter tasks={tasks} />
-      <TaskList tasks={tasks} onToggleTask={toggleTask} onDeleteTask={deleteTask} />
+     
     </div>
   );
 }
