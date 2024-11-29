@@ -1,5 +1,5 @@
 import React from 'react';
-import Clipboard from '../assets/Clipboard.png'; 
+import Clipboard from '../assets/Clipboard.png';
 
 function TaskList({ tasks, onToggleTask, onDeleteTask }) {
   return (
@@ -14,7 +14,7 @@ function TaskList({ tasks, onToggleTask, onDeleteTask }) {
             className="text-gray-200 hover:text-blue-400"
           >
             <span className="material-icons">
-              {task.completed ? 'check' : 'circle'}
+              {task.completed ? 'check_circle' : 'radio_button_unchecked'}
             </span>
           </button>
           <div
@@ -28,15 +28,19 @@ function TaskList({ tasks, onToggleTask, onDeleteTask }) {
             onClick={() => onDeleteTask(task.name)}
             className="text-gray-500 hover:text-red-500"
           >
-            <span className="material-icons">delete_forever</span>
+            <span className="material-icons">delete</span>
           </button>
         </li>
       ))}
       {tasks.length === 0 && (
         <div className="text-center text-gray-500 justify-center ">
-            <img src={Clipboard} alt="Clipboard" className="mx-auto my-4 w-16" />
-              <p>Você ainda não tem tarefas cadastradas</p>
-              <p>Crie tarefas e organize seus itens a fazer</p>
+            <img
+            src={Clipboard}
+            alt="Clipboard"
+            className="mx-auto my-4 w-16"
+          />
+          <p>Você ainda não tem tarefas cadastradas</p>
+          <p>Crie tarefas e organize seus itens a fazer</p>
         </div>
       )}
     </ul>
