@@ -8,6 +8,8 @@ const TaskCounter = () => {
   const totalTasks = tasks.length;
   const completedTasks = tasks.filter((task) => task.completed).length;
 
+  //vai exibir o número de tarefas concluídas seguido do total no formato X de Y.
+
   return (
     <div className="flex justify-between w-full max-w-4xl my-4">
       <div className="flex items-center space-x-2">
@@ -16,7 +18,7 @@ const TaskCounter = () => {
       </div>
       <div className="flex items-center space-x-2 mt-2">
         <h3 className="text-purple-400 font-bold">Tarefas Concluídas:</h3>
-        <span className="bg-gray-700 px-2 py-1 rounded">{`${completedTasks} de ${totalTasks}`}</span>
+        <span className="bg-gray-700 px-2 py-1 rounded">{`${completedTasks} de ${totalTasks}`}</span>  
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ function TaskList() {
     <ul className="w-full max-w-4xl">
       {tasks.map((task) => (
         <li
-          key={task.name}
+          key={task.name} //garate q o item será único
           className="bg-gray-700 flex items-center justify-between p-4 mb-2 rounded"
         >
           <button
@@ -20,7 +20,7 @@ function TaskList() {
           </button>
           <div
             className={`flex-grow mx-4 ${
-              task.completed ? 'line-through text-gray-500' : ''
+              task.completed ? 'line-through text-gray-500' : '' //Exibe o nome da tarefa no centro da linha.
             }`}
           >
             {task.name}
@@ -33,7 +33,7 @@ function TaskList() {
           </button>
         </li>
       ))}
-      {tasks.length === 0 && (
+      {tasks.length === 0 && ( //se tiver 0 tarefas
         <div className="text-center text-gray-500 justify-center">
           <img
               src={Clipboard}

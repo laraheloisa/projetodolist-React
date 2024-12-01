@@ -6,8 +6,8 @@ function TaskInput() {
   const { addTask } = useTaskContext();
 
   const handleAddTask = () => {
-    if (taskName.trim() === '') {
-      alert('Por favor, insira uma tarefa.');
+    if (taskName.trim() === '') { // usuário digitou algo no campo de entrada
+      alert('Por favor, insira uma tarefa.'); 
       return;
     }
     addTask(taskName.trim());
@@ -25,9 +25,10 @@ function TaskInput() {
       />
       <button
         onClick={handleAddTask}
-        className="ml-4 bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-white"
+        className="ml-4 bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-white flex items-center"
       >
         Criar
+        <span className="material-symbols-outlined ml-2">add_circle</span>
       </button>
     </div>
   );

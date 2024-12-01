@@ -7,7 +7,7 @@ const TaskContext = createContext();
 export const TaskProvider = ({ children }) => {
   const [tasks, setTasks] = useState([]);
 
-  // Função para adicionar uma tarefa
+  
   const addTask = (name) => {
     setTasks([...tasks, { name, completed: false }]);
   };
@@ -16,12 +16,12 @@ export const TaskProvider = ({ children }) => {
   const toggleTask = (name) => {
     setTasks(
       tasks.map((task) =>
-        task.name === name ? { ...task, completed: !task.completed } : task
+        task.name === name ? { ...task, completed: !task.completed } : task //Percorre a lista de tarefas e alterna o estado completed da tarefa cujo nome corresponde ao fornecido, mantendo as demais inalteradas.
       )
     );
   };
 
-  // Função para deletar uma tarefa
+ 
   const deleteTask = (name) => {
     setTasks(tasks.filter((task) => task.name !== name));
   };
