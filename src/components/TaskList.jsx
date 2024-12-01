@@ -1,7 +1,9 @@
 import React from 'react';
-import Clipboard from '../assets/Clipboard.png';
+import { useTaskContext } from '../context/TaskContext';
 
-function TaskList({ tasks, onToggleTask, onDeleteTask }) {
+function TaskList() {
+  const { tasks, toggleTask, deleteTask } = useTaskContext();
+
   return (
     <ul className="w-full max-w-4xl">
       {tasks.map((task) => (
@@ -10,12 +12,10 @@ function TaskList({ tasks, onToggleTask, onDeleteTask }) {
           className="bg-gray-700 flex items-center justify-between p-4 mb-2 rounded"
         >
           <button
-            onClick={() => onToggleTask(task.name)}
-            className="text-gray-200 hover:text-blue-400"
+            onClick={() => toggleTask(task.name)}
+            className="text-gray-200 hover:text-blue-400 material-icons"
           >
-            <span className="material-icons">
-              {task.completed ? 'check_circle' : 'radio_button_unchecked'}
-            </span>
+            {task.completed ? 'check_circle' : 'radio_button_unchecked'}
           </button>
           <div
             className={`flex-grow mx-4 ${
@@ -25,20 +25,15 @@ function TaskList({ tasks, onToggleTask, onDeleteTask }) {
             {task.name}
           </div>
           <button
-            onClick={() => onDeleteTask(task.name)}
-            className="text-gray-500 hover:text-red-500"
+            onClick={() => deleteTask(task.name)}
+            className="text-gray-500 hover:text-red-500 material-icons"
           >
-            <span className="material-icons">delete</span>
+            delete
           </button>
         </li>
       ))}
       {tasks.length === 0 && (
-        <div className="text-center text-gray-500 justify-center ">
-            <img
-            src={Clipboard}
-            alt="Clipboard"
-            className="mx-auto my-4 w-16"
-          />
+        <div className="text-center text-gray-500 justify-center">
           <p>Você ainda não tem tarefas cadastradas</p>
           <p>Crie tarefas e organize seus itens a fazer</p>
         </div>
