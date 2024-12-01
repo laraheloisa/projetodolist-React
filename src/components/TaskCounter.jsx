@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTaskContext } from '../context/TaskContext';
 
+
 const TaskCounter = () => {
   const { tasks } = useTaskContext();
 

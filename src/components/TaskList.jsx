@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTaskContext } from '../context/TaskContext';
+import Clipboard from '../assets/Clipboard.png'
 
 function TaskList() {
   const { tasks, toggleTask, deleteTask } = useTaskContext();
@@ -34,6 +35,11 @@ function TaskList() {
       ))}
       {tasks.length === 0 && (
         <div className="text-center text-gray-500 justify-center">
+          <img
+              src={Clipboard}
+              alt="Clipboard"
+              className="mx-auto my-4 w-16"
+            />
           <p>Você ainda não tem tarefas cadastradas</p>
           <p>Crie tarefas e organize seus itens a fazer</p>
         </div>

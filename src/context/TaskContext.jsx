@@ -1,9 +1,9 @@
 import React, { createContext, useContext, useState } from "react";
 
-// Criando o contexto
+// Criando o contexto para gerenciar o estado da lista
 const TaskContext = createContext();
 
-// Provedor do contexto
+//é um componente que fornece o estado e funções relacionadas às tarefas para os componentes filhos.
 export const TaskProvider = ({ children }) => {
   const [tasks, setTasks] = useState([]);
 
